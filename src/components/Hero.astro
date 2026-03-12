@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import Services from "./Services.astro";
 import CEOImage from "@assets/images/ceo.webp";
+import ButtonLink from "./ButtonLink.astro";
 ---
 
 <section class="hero">
@@ -15,8 +16,12 @@ import CEOImage from "@assets/images/ceo.webp";
       </p>
 
       <div class="hero-buttons">
-        <a class="btn-primary" href="#0">Book a Meeting</a>
-        <a class="btn-secondary" href="#0">Learn More →</a>
+        <ButtonLink href="/priser" variant="yellow_link"
+          >Book a Meeting</ButtonLink
+        >
+        <ButtonLink href="/priser" variant="border_link"
+          >Learn More →</ButtonLink
+        >
       </div>
     </div>
   </div>
@@ -29,7 +34,11 @@ import CEOImage from "@assets/images/ceo.webp";
 </section>
 
 <style>
-  /* Styles her */
+  h1 {
+    font-size: var(--h1-size);
+    font-weight: 700;
+  }
+
   @layer components {
     .hero {
       display: grid;
@@ -40,15 +49,24 @@ import CEOImage from "@assets/images/ceo.webp";
       grid-column: full-start / content-mid;
       background: #020617;
       color: white;
+      display: grid;
+      grid-template-columns: subgrid;
     }
 
     .hero-content {
       grid-column: content-start;
-      max-width: 60ch;
-      padding: 4rem 2rem;
+      padding-top: 4rem;
+      padding-right: 2rem;
+      padding-bottom: 10rem; /* mere sort område */
+      h1 {
+        margin-bottom: var(--space-heading);
+      }
+      p {
+        margin-bottom: var(--space-heading);
+        color: var(--color-on-ui-primary-muted);
+      }
     }
 
-    /* højre side */
     .hero-right {
       grid-column: content-mid / full-end;
     }
@@ -57,6 +75,13 @@ import CEOImage from "@assets/images/ceo.webp";
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    .hero-buttons {
+      display: flex;
+      > * + * {
+        margin-left: 1rem;
+      }
     }
   }
 </style>
