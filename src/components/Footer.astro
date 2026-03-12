@@ -7,36 +7,38 @@
 </footer>
 
 <style>
-  footer {
-    display: grid;
-    grid-template-columns:
-      [full-start] 1fr [content-start] minmax(0, 90ch)
-      [content-end] 1fr [full-end];
-    padding-top: 46px;
-    padding-bottom: 46px;
-    background-color: var(--color-ui-primary);
-  }
+  @layer compnents {
+    footer {
+      display: grid;
+      grid-template-columns:
+        [full-start] 1fr [content-start] minmax(0, 90ch)
+        [content-end] 1fr [full-end];
+      padding-top: 46px;
+      padding-bottom: 46px;
+      background-color: var(--color-ui-primary);
+    }
 
-  .footer-content {
-    grid-column: content-start / content-end;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
+    .footer-content {
+      grid-column: content-start / content-end;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-  .footer-content h4 {
-    color: var(--color-on-ui-primary);
-    margin: 0;
-  }
+    .footer-content h4 {
+      color: var(--color-on-ui-primary);
+      margin: 0;
+    }
 
-  .footer-content h5 {
-    color: var(--color-text-weak);
-    margin: 0;
-  }
+    .footer-content h5 {
+      color: var(--color-text-weak);
+      margin: 0;
+    }
 
-  /* Span inde i h4 */
-  .footer-content h4 span {
-    color: var(--color-action);
+    /* Span inde i h4 */
+    .footer-content h4 span {
+      color: var(--color-action);
+    }
   }
 </style>

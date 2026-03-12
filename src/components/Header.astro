@@ -3,17 +3,60 @@
 ---
 
 <header>
-  <div class="menu">
+  <div class="header-content">
     <div class="logo">
-      Ask<span>Experts</span>
+      <h3>Ask<span>Experts</span></h3>
     </div>
-    <div class="menu_text">
-      <a href="/index"> <h1>Home</h1></a>
-      <a href="/case"> <h1>Case Study</h1></a>
-      <a href="/team"> <h1>Team</h1></a>
-      <a href="/about"> <h1>About</h1></a>
-    </div>
+
+    <nav class="menu_text">
+      <a href="/index">Home</a>
+      <a href="/case">Case Study</a>
+      <a href="/team">Team</a>
+      <a href="/about">About</a>
+    </nav>
+
+    <button><a class="login" href="#">Login</a></button>
   </div>
 </header>
 
-<style></style>
+<style>
+  @layer components {
+    header {
+      display: grid;
+      grid-template-columns:
+        [full-start] 1fr [content-start] minmax(0, 90ch)
+        [content-end] 1fr [full-end];
+      padding-top: 30px;
+      padding-bottom: 30px;
+      background-color: var(--color-ui-primary);
+    }
+
+    .header-content {
+      grid-column: content-start / content-end;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-content h3 {
+      color: var(--color-on-ui-primary);
+      margin: 0;
+    }
+
+    .header-content a {
+      color: var(--color-on-ui-primary);
+      margin: 0;
+      text-decoration: none;
+    }
+
+    .menu_text a {
+      padding: 20px;
+    }
+
+    /* Span inde i h3 */
+    .header-content h3 span {
+      color: var(--color-action);
+    }
+  }
+</style>
