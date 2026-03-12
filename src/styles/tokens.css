@@ -38,14 +38,17 @@
   --space-ordered-list: 2.14rlh;
 
   /* ==== Typography ==== */
-  --font-family: "Cabin", sans-serif;
-  --weight-regular: 600;
+  --font-header: "Cabin", sans-serif;
+  --font-text: "Lato", sans-serif;
+  --weight-header-regular: 600;
+  --weight-text-regular: 400;
 
   --h1-size: 50px;
   --h2-size: 45px;
   --h3-size: 40px;
   --h4-size: 35px;
   --h5-size: 30px;
+  --p-size: 18px;
 
   /* ==== Border Radii ==== */
   --border-radius-1: 20px;
