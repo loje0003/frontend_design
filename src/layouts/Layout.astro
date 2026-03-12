@@ -1,5 +1,7 @@
 ---
 import "@styles/main.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
@@ -9,12 +11,20 @@ import "@styles/main.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>DIN TITEL HER. MÅSKE SOM PROP?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
     <style is:inline>
       @layer reset, global, tokens, components, overrides;
     </style>
   </head>
   <body>
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 
