@@ -23,9 +23,8 @@
   @layer components {
     header {
       display: grid;
-      grid-template-columns:
-        [full-start] 1fr [content-start] minmax(0, 90ch)
-        [content-end] 1fr [full-end];
+      grid-template-columns: subgrid;
+      grid-column: full;
       padding-top: 30px;
       padding-bottom: 30px;
       background-color: var(--color-ui-primary);
