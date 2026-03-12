@@ -3,10 +3,21 @@ import Layout from "@layouts/Layout.astro";
 import Hero from "@components/Hero.astro";
 import Button from "@components/Button.astro";
 import CoreValuesCard from "@components/CoreValuesCard.astro";
+import Card from "@components/Card.astro";
+import CEOImage from "@assets/images/ceo.webp";
 ---
 
 <Layout>
   <Hero />
+
+  <Card
+    image={CEOImage}
+    subtitle="WE'LL WORK WITH YOU"
+    title="What To Expect"
+    description="Our collaboration is built on transparency, efficiency, and measurable results. Together, we create strategies tailored to your unique needs and goals."
+    point1="Collaborate to build actionable strategies that drive sustainable growth and deliver tangible outcomes."
+    point2="Identify opportunities to optimize processes and implement impactful solutions with measurable results."
+  />
 
   <section class="core_values">
     <div class="core_values_content">
