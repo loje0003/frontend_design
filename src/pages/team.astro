@@ -1,6 +1,8 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Banner from "@components/Banner.astro";
+import TeamCard from "@components/TeamCard.astro";
+import Employees from "../data/employees.json";
 ---
 
 <Layout>
@@ -9,4 +11,6 @@ import Banner from "@components/Banner.astro";
     title="The Consultors"
     description="Our success stems from the synergy between dedicated teams and our valued clients. We prioritize a company culture that fosters exceptional productivity, ensures customer satisfaction."
   />
+
+  <TeamCard Employees={Employees} />
 </Layout>
