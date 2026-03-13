@@ -1,5 +1,5 @@
 ---
-
+import Button from "./Button.astro";
 ---
 
 <header>
@@ -15,47 +15,47 @@
       <a href="/about">About</a>
     </nav>
 
-    <button><a class="login" href="#">Login</a></button>
+    <Button variant="white">Login</Button>
   </div>
+
+  <style>
+    @layer components {
+      header {
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-column: full;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        background-color: var(--color-ui-primary);
+      }
+
+      .header-content {
+        grid-column: content-start / content-end;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .header-content h3 {
+        color: var(--color-on-ui-primary);
+        margin: 0;
+      }
+
+      .header-content a {
+        color: var(--color-on-ui-primary);
+        margin: 0;
+        text-decoration: none;
+      }
+
+      .menu_text a {
+        padding: 20px;
+      }
+
+      /* Span inde i h3 */
+      .header-content h3 span {
+        color: var(--color-action);
+      }
+    }
+  </style>
 </header>
-
-<style>
-  @layer components {
-    header {
-      display: grid;
-      grid-template-columns: subgrid;
-      grid-column: full;
-      padding-top: 30px;
-      padding-bottom: 30px;
-      background-color: var(--color-ui-primary);
-    }
-
-    .header-content {
-      grid-column: content-start / content-end;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .header-content h3 {
-      color: var(--color-on-ui-primary);
-      margin: 0;
-    }
-
-    .header-content a {
-      color: var(--color-on-ui-primary);
-      margin: 0;
-      text-decoration: none;
-    }
-
-    .menu_text a {
-      padding: 20px;
-    }
-
-    /* Span inde i h3 */
-    .header-content h3 span {
-      color: var(--color-action);
-    }
-  }
-</style>
