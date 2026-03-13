@@ -47,7 +47,14 @@ import ButtonLink from "./ButtonLink.astro";
     }
     .hero-left {
       grid-column: full-start / content-mid;
-      background: #020617;
+      background:
+        conic-gradient(
+            from 180deg at 1px 1px,
+            var(--grid-color) 75%,
+            #0000 0
+          ) -1px -1px /
+          var(--grid-size) var(--grid-size),
+        var(--color-neutrals-900);
       color: white;
       display: grid;
       grid-template-columns: subgrid;
