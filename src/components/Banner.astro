@@ -1,0 +1,57 @@
+---
+const { title, subtitle, description } = Astro.props;
+---
+
+<section class="banner">
+  <div class="card_banner">
+    <span class="eyebrow">{subtitle}</span>
+    <h1>{title}</h1>
+    <p>{description}</p>
+  </div>
+</section>
+
+<style>
+  @layer components {
+    .banner {
+      background: var(--color-neutrals-100);
+      padding-block: 6rem;
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: full;
+    }
+    .banner > * {
+      grid-column: content;
+    }
+
+    .card_banner {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-size: 0.8rem;
+        color: var(--color-text-muted);
+      }
+
+      h1 {
+        font-size: var(--h2-size);
+        position: relative;
+        display: inline-block;
+        text-decoration: underline solid var(--color-action);
+        text-decoration-thickness: 5px;
+        text-underline-offset: 6px;
+        text-decoration-skip-ink: auto;
+      }
+
+      p {
+        font-size: var(--p-size);
+        color: var(--color-neutrals-700);
+      }
+    }
+  }
+</style>
