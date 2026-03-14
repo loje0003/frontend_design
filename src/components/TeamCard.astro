@@ -22,15 +22,16 @@ import ButtonLink from "./ButtonLink.astro";
     {
       Employees.map((employee) => (
         <article class="team_card">
-          <div class="image_wrapper">
-            <img src={employee.img} alt={employee.name} />
-            <span class="role">{employee.title}</span>
-          </div>
+          <a href={`/singlepage/${employee.slug}`} class="team_card_link">
+            <div class="image_wrapper">
+              <img src={employee.img} alt={employee.name} />
+              <span class="role">{employee.title}</span>
+            </div>
 
-          <h5>{employee.name}</h5>
+            <h5>{employee.name}</h5>
 
-          <p>{employee.description}</p>
-
+            <p>{employee.description}</p>
+          </a>
           <div class="socials">
             {employee.social_links.map((link) => (
               <a href={link.url} target="_blank" rel="noopener noreferrer">
@@ -60,21 +61,21 @@ import ButtonLink from "./ButtonLink.astro";
     }
 
     .team_intro {
-      grid-column: 1 / -1; /* Fylder hele grid-bredden */
-      display: flex; /* Flex til tekst + knap */
+      grid-column: 1 / -1;
+      display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap; /* Bryder på små skærme */
+      flex-wrap: wrap;
       gap: 2rem;
     }
 
     .team_intro .text {
-      flex: 1 1 60%; /* Teksten fylder op til 60% af bredden */
-      min-width: 250px; /* Forhindrer for smal tekst */
+      flex: 1 1 60%;
+      min-width: 250px;
     }
 
     .team_intro ButtonLink {
-      flex-shrink: 0; /* Knappen holder sin naturlige bredde */
+      flex-shrink: 0;
     }
 
     .team_grid {
@@ -113,17 +114,17 @@ import ButtonLink from "./ButtonLink.astro";
     }
 
     .team_card h5 {
-      margin: 0.3rem 0; /* Mindre afstand mellem navn og beskrivelse */
+      margin: 0.3rem 0;
       font-size: var(--h5-size);
     }
 
     .team_card p {
       margin: 0.3rem 0;
-      font-size: 0.9rem; /* Lidt mindre tekst, kompakt */
+      font-size: 0.9rem;
     }
 
     .socials {
-      gap: 5px; /* Mindre mellemrum mellem ikoner */
+      gap: 5px;
       margin-top: 0.3rem;
     }
 
