@@ -20,7 +20,7 @@ import ButtonLink from "./ButtonLink.astro";
 
   <div class="team_grid">
     {
-      Employees.map((employee) => (
+      Employees.map((employee: any) => (
         <article class="team_card">
           <a href={`/singlepage/${employee.slug}`} class="team_card_link">
             <div class="image_wrapper">
@@ -33,7 +33,7 @@ import ButtonLink from "./ButtonLink.astro";
             <p>{employee.description}</p>
           </a>
           <div class="socials">
-            {employee.social_links.map((link) => (
+            {employee.social_links.map((link: any) => (
               <a href={link.url} target="_blank" rel="noopener noreferrer">
                 <img
                   src={`/src/icons/${link.platform}.svg`}
