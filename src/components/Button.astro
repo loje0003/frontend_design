@@ -1,8 +1,8 @@
 ---
-const { variant = "primary" } = Astro.props;
+const { variant = "primary", target } = Astro.props;
 ---
 
-<button class={variant}>
+<button class={variant} popovertarget={target}>
   {(<slot />)}
 </button>
 
