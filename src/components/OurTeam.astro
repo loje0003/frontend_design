@@ -1,12 +1,11 @@
 ---
 import ButtonLink from "./ButtonLink.astro";
 import employee from "@data/employees.json";
-const { Employees, title, subtitle, description } = Astro.props;
+const { Employees, title, subtitle, description, ImageId1, ImageId2 } =
+  Astro.props;
 ---
 
----
-
-<!-- <section>
+<section>
   <div class="card_content">
     <span class="eyebrow">{subtitle}</span>
     <h2>{title}</h2>
@@ -16,7 +15,7 @@ const { Employees, title, subtitle, description } = Astro.props;
 
   <div class="team">
     {
-      Employees.map((employee) => (
+      Employees?.map((employee: any) => (
         <article class="team_card">
           <a href={`/singlepage/${employee.slug}`} class="team_card_link">
             <div class="image_wrapper">
@@ -32,4 +31,4 @@ const { Employees, title, subtitle, description } = Astro.props;
       ))
     }
   </div>
-</section> -->
+</section>
