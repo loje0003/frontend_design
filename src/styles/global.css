@@ -37,6 +37,7 @@
 
   margin-top: var(--space-sections);
   margin-bottom: var(--space-sections);
+
   h3 {
     display: flex;
     justify-content: center;
@@ -44,21 +45,22 @@
     font-weight: var(--weight-header-regular);
     font-size: var(--h3-size);
   }
+
+  .eyebrow {
+    margin-top: var(--space-sections);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+  }
 }
 .accordion-inner {
   width: 600px;
   margin-inline: auto;
 
   margin-bottom: var(--space-sections);
-}
-.eyebrow {
-  margin-top: var(--space-sections);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.8rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  justify-content: center;
 }
 
 .list {
