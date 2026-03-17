@@ -1,6 +1,10 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Banner from "@components/Banner.astro";
+import Card from "@components/Card.astro";
+import GroupImage from "@assets/images/group.webp";
+import CoreValuesCard from "@components/CoreValuesCard.astro";
+import OurTeam from "@components/OurTeam.astro";
 ---
 
 <Layout>
@@ -10,4 +14,39 @@ import Banner from "@components/Banner.astro";
     description="Our strength lies in the collaboration between our talented teams and esteemed clients. We cultivate a workplace that champions innovation, promotes peak performance, and guarantees client satisfaction."
     linePosition="right"
   />
+
+  <Card
+    image={GroupImage}
+    subtitle="OUR VISION"
+    title="What To Turn your ideas into reality."
+    description="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps."
+    point1="Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day."
+    point2="Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital."
+    reverse={true}
+  />
+
+  <div class="numbers">
+    <div class="number_child">
+      <div>
+        <h3>1128+</h3>
+        <p>Successful Work</p>
+      </div>
+      <div>
+        <h3>908+</h3>
+        <p>Team member</p>
+      </div>
+      <div>
+        <h3>258+</h3>
+        <p>Happy Customers</p>
+      </div>
+      <div>
+        <h3>564+</h3>
+        <p>Creative Idea</p>
+      </div>
+    </div>
+  </div>
+
+  <OurTeam />
+
+  <CoreValuesCard title="Dark Section" theme="default" />
 </Layout>

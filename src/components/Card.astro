@@ -13,7 +13,7 @@ const {
 } = Astro.props;
 ---
 
-<section class={`card ${reverse ? "expect--reverse" : ""}`}>
+<section class={`card ${reverse ? "card--reverse" : ""}`}>
   <div class="card_image">
     {image && <Image src={image} alt={title} />}
   </div>
@@ -39,13 +39,14 @@ const {
       display: grid;
       grid-template-columns: subgrid;
       grid-column: content;
+      gap: 64px;
 
       img {
         border-radius: var(--border-radius-1);
       }
 
       > * + * {
-        margin-left: 64px;
+        gap: 64px;
       }
 
       h2 {
@@ -56,6 +57,18 @@ const {
         color: var(--color-neutrals-700);
       }
     }
+
+    .card--reverse {
+      direction: rtl; /* vender rækkefølgen i grid */
+      text-align: right;
+      gap: 64px;
+    }
+
+    .card--reverse .card_content {
+      direction: ltr; /* holder tekst normal */
+      text-align: left;
+    }
+
     ul {
       list-style: none;
       padding: 0;

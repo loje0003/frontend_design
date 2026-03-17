@@ -1,0 +1,35 @@
+---
+import ButtonLink from "./ButtonLink.astro";
+import employee from "@data/employees.json";
+const { Employees, title, subtitle, description } = Astro.props;
+---
+
+---
+
+<!-- <section>
+  <div class="card_content">
+    <span class="eyebrow">{subtitle}</span>
+    <h2>{title}</h2>
+
+    <p>{description}</p>
+  </div>
+
+  <div class="team">
+    {
+      Employees.map((employee) => (
+        <article class="team_card">
+          <a href={`/singlepage/${employee.slug}`} class="team_card_link">
+            <div class="image_wrapper">
+              <img src={employee.img} alt={employee.name} />
+              <span class="role">{employee.title}</span>
+            </div>
+
+            <h5>{employee.name}</h5>
+
+            <p>{employee.description}</p>
+          </a>
+        </article>
+      ))
+    }
+  </div>
+</section> -->
