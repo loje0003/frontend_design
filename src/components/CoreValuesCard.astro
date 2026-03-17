@@ -15,7 +15,7 @@ const { title, theme = "default" } = Astro.props;
         {coreValues.subtitle}
       </p>
     </div>
-    <ButtonLink variant="black_link">HEYOO</ButtonLink>
+    <ButtonLink variant="contrasted">Get in touch</ButtonLink>
   </div>
 
   <div class="cards_grid">
@@ -123,11 +123,15 @@ const { title, theme = "default" } = Astro.props;
     --bg: var(--color-surface-secondary);
     --text: var(--color-text);
     --card-bg: var(--color-surface-primary);
+    --bg-button: #000;
+    --color-button: #eaeaea;
   }
 
   [data-surface="dark"] {
     --bg: var(--color-neutrals-900);
     --text: var(--color-on-ui-primary);
     --card-bg: var(--color-surface-secondary);
+    --bg-button: #eaeaea;
+    --color-button: #000;
   }
 </style>
