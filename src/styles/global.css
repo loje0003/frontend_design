@@ -1,1 +1,30 @@
 /* Globale styles her */
+
+.numbers {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: full;
+
+  > * {
+    grid-column: content;
+  }
+
+  h3 {
+    font-family: var(--font-header);
+    font-weight: var(--weight-header-regular);
+    font-size: var(--h3-size);
+  }
+
+  p {
+    font-family: var(--font-text);
+    font-weight: var(--weight-text-regular);
+    font-size: var(--p-size);
+    color: var(--color-neutrals-400);
+  }
+}
+
+.number_child {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: var(--space-sections);
+}
