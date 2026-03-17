@@ -5,6 +5,7 @@ import Card from "@components/Card.astro";
 import GroupImage from "@assets/images/group.webp";
 import CoreValuesCard from "@components/CoreValuesCard.astro";
 import OurTeam from "@components/OurTeam.astro";
+import faq from "@data/faq.json";
 ---
 
 <Layout>
@@ -46,7 +47,21 @@ import OurTeam from "@components/OurTeam.astro";
     </div>
   </div>
 
+  <CoreValuesCard title="Dark Section" theme="default" />
   <OurTeam />
 
-  <CoreValuesCard title="Dark Section" theme="default" />
+  <section class="accordion">
+    <p class="eyebrow">faq</p>
+    <h3>Customer Questions</h3>
+    <div class="accordion-inner">
+      {
+        faq.faq.map((item) => (
+          <details name="something" class="list">
+            <summary>{item.question}</summary>
+            <div>{item.answer}</div>
+          </details>
+        ))
+      }
+    </div>
+  </section>
 </Layout>
