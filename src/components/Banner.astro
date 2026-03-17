@@ -1,8 +1,8 @@
 ---
-const { title, subtitle, description } = Astro.props;
+const { title, subtitle, description, linePosition = "left" } = Astro.props;
 ---
 
-<section class="banner">
+<section class={`banner ${linePosition}`}>
   <div class="card_banner">
     <span class="eyebrow">{subtitle}</span>
     <h1>{title}</h1>
@@ -18,9 +18,46 @@ const { title, subtitle, description } = Astro.props;
       display: grid;
       grid-template-columns: subgrid;
       grid-column: full;
+      position: relative;
     }
+
     .banner > * {
       grid-column: content;
+    }
+
+    .banner::before {
+      content: "";
+      position: absolute;
+      height: 5px;
+      width: 38%;
+      background: var(--color-action);
+      top: 48.5%;
+      transform: translateY(-50%);
+    }
+
+    .banner.left1::before {
+      left: 0;
+    }
+
+    .banner.left2::before {
+      left: 0;
+      width: 40%;
+    }
+
+    .banner.right::before {
+      right: 0;
+    }
+
+    @media (max-width: 600px) {
+      .banner::before {
+        top: 45.2%;
+        width: 16%;
+      }
+
+      .banner.right::before {
+        right: 0;
+        width: 20%;
+      }
     }
 
     .card_banner {
@@ -42,10 +79,10 @@ const { title, subtitle, description } = Astro.props;
         font-size: var(--h2-size);
         position: relative;
         display: inline-block;
+
         text-decoration: underline solid var(--color-action);
         text-decoration-thickness: 5px;
         text-underline-offset: 6px;
-        text-decoration-skip-ink: auto;
       }
 
       p {
