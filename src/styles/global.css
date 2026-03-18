@@ -55,16 +55,15 @@
     display: flex;
     justify-content: center;
   }
+  .list {
+    border-bottom: 2px solid #dadada;
+  }
 }
 .accordion-inner {
   width: 600px;
   margin-inline: auto;
 
   margin-bottom: var(--space-sections);
-}
-
-.list {
-  border-bottom: 2px solid #dadada;
 }
 
 summary {
