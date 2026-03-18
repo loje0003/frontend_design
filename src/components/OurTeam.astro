@@ -5,7 +5,7 @@ const { Employees, title, subtitle, description, ImageId1, ImageId2 } =
   Astro.props;
 ---
 
-<section class="our_card">
+<section>
   <div class="card_content">
     <!-- VENSTRE -->
     <div class="left">
@@ -20,7 +20,7 @@ const { Employees, title, subtitle, description, ImageId1, ImageId2 } =
     <div class="team">
       {
         Employees?.slice(0, 2).map((employee: any) => (
-          <article class="team_card">
+          <article>
             <a href={`/singlepage/${employee.slug}`} class="team_card_link">
               <img src={employee.img} alt={employee.name} />
 
@@ -39,7 +39,7 @@ const { Employees, title, subtitle, description, ImageId1, ImageId2 } =
 
 <style>
   @layer components {
-    .our_card {
+    section {
       margin-top: var(--space-sections);
       padding-bottom: var(--space-heading);
       display: grid;
@@ -50,35 +50,26 @@ const { Employees, title, subtitle, description, ImageId1, ImageId2 } =
     .card_content {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
     }
 
     .left {
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      max-width: 500px;
-    }
-
-    .team {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
     }
 
     .team_card_link {
       display: grid;
-      grid-template-columns: 120px 1fr;
       gap: 1.5rem;
       text-decoration: none;
       color: inherit;
       align-items: center;
+      grid-template-columns: 1fr 1fr;
+      min-width: 300px;
     }
 
-    .team_card img {
-      width: 120px;
-      height: 120px;
+    .article img {
+      width: 100%;
       object-fit: cover;
       border-radius: 20px;
     }
