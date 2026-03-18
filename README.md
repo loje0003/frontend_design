@@ -66,3 +66,15 @@ import Checkmark from "@icons/checkmark.svg";
 ```
 
 Se evt. `src/pages/svgs.astro` for flere eksempler på direkte import og brug af SVG-ikoner.
+
+/******\******* REFLEKSION ****\*\*\*\*****/
+
+I arbejdet med denne opgave har vi fået en bedre forståelse for opbygning af komponentbaserede løsninger i Astro, men vi har også oplevet flere udfordringer undervejs.
+
+En af de største udfordringer har været brugen af container queries. Vi har haft svært ved at få dem til at fungere korrekt, især i forhold til hvornår og hvor de skulle anvendes. Det gjorde, at vi i flere tilfælde brugte unødvendig tid på at fejlfinde, før vi opnåede det ønskede responsive layout.
+Det har dog givet os en bedre forståelse for, hvordan container queries adskiller sig fra media queries, og hvornår det giver mening at bruge dem.
+
+Derudover opdagede vi sent i processen, at der var en mere effektiv måde at håndtere typografi på. I stedet for at style fonts i hvert enkelt komponent, kunne vi have oprettet en fælles løsning, hvor font-styles blev defineret ét sted. Det ville have gjort vores kode mere konsistent og lettere at vedligeholde.
+
+En anden læring har været arbejdet med grid og subgrid. Det var til tider udfordrende at få elementer til at flugte korrekt, men gennem iteration har vi fået en bedre forståelse for, hvordan layout kan styres mere præcist.
+Afslutningsvis har opgaven givet os en bedre forståelse for samspillet mellem HTML, CSS og komponenter i Astro. Selvom vi har mødt udfordringer, har processen været lærerig, og vi står nu med en større forståelse for både struktur, styling og responsivt design.
