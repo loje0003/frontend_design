@@ -51,21 +51,24 @@ const {
 
       h2 {
         font-size: var(--h2-size);
+        font-family: var(--font-header);
+        font-weight: var(--weight-header-regular);
       }
       p {
         font-size: var(--p-size);
         color: var(--color-neutrals-700);
+        padding: 10px;
       }
     }
 
     .card--reverse {
-      direction: rtl; /* vender rækkefølgen i grid */
+      direction: rtl;
       text-align: right;
       gap: 64px;
     }
 
     .card--reverse .card_content {
-      direction: ltr; /* holder tekst normal */
+      direction: ltr;
       text-align: left;
     }
 
@@ -81,6 +84,7 @@ const {
       align-items: center;
       gap: 0.8rem;
       color: var(--color-neutrals-700);
+      padding-top: 15px;
 
       .icon {
         width: 16.69px;

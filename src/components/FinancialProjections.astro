@@ -6,12 +6,21 @@ import ArrowRight from "../icons/arrow--right.svg";
 ---
 
 <section class="financial-section">
-  <p class="eyebrow">{financialProjections.eyebrow}</p>
-  <h2>{financialProjections.title}</h2>
-  <p>{financialProjections.subtitle}</p>
-
-  <ArrowLeft class="arrow_left" />
-  <ArrowRight class="arrow_right" />
+  <div class="financial-div">
+    <div>
+      <p class="eyebrow">{financialProjections.eyebrow}</p>
+      <h2>{financialProjections.title}</h2>
+      <p>{financialProjections.subtitle}</p>
+    </div>
+    <div class="arrows">
+      <div>
+        <ArrowLeft class="arrow_left" />
+      </div>
+      <div>
+        <ArrowRight class="arrow_right" />
+      </div>
+    </div>
+  </div>
 
   <ul class="cards_grid">
     {
@@ -76,6 +85,11 @@ import ArrowRight from "../icons/arrow--right.svg";
       }
     }
 
+    .financial-div {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+    }
+
     .cards_grid {
       list-style: none;
       margin: 0;
@@ -83,15 +97,15 @@ import ArrowRight from "../icons/arrow--right.svg";
 
       display: grid;
       grid-auto-flow: column;
-      grid-auto-columns: 480px;
-      gap: 25px;
+      grid-auto-columns: 350px;
+      gap: 30px;
 
       scroll-snap-type: x mandatory;
       grid-column: full;
-      padding-inline: max(1rem, 50% - 1000px / 2);
+      padding-inline: max(1rem, 50% - 980px / 2);
       padding-block-end: 1rem;
       overflow-inline: auto;
-      scroll-padding-inline: max(1rem, 50% - 1000px / 2);
+      scroll-padding-inline: max(1rem, 50% - 980px / 2);
     }
 
     .card {
@@ -100,6 +114,14 @@ import ArrowRight from "../icons/arrow--right.svg";
       padding: var(--border-radius-1);
       align-self: start;
       margin-top: 2rem;
+    }
+
+    .arrows {
+      display: flex;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 100px;
+      justify-content: right;
     }
 
     .arrow_left {
