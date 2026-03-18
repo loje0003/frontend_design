@@ -92,11 +92,16 @@ import ButtonLink from "./ButtonLink.astro";
       gap: 2rem;
     }
 
-    .case-details dl {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin: 0;
+    .case-details {
+      dl {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin: 0;
+      }
+      dt {
+        font-weight: 600;
+      }
     }
 
     .case-details dl div {
