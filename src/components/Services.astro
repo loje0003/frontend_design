@@ -18,9 +18,22 @@ import DynamicImage from "@helpers/DynamicImage.astro";
       grid-column: content-start / content-end;
       grid-template-columns: repeat(3, 1fr);
 
-      margin-top: -7rem;
-      position: relative;
-      z-index: 2;
+      margin-top: -7rem; /* overlap op i hero */
+    }
+  }
+  /* Tablet */
+  @media (max-width: 900px) {
+    .services {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: -4rem; /* mindre overlap */
+    }
+  }
+
+  /* Mobil */
+  @media (max-width: 600px) {
+    .services {
+      grid-template-columns: 1fr;
+      margin-top: -2rem; /* endnu mindre overlap */
     }
   }
 </style>
