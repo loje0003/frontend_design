@@ -91,4 +91,17 @@ import ButtonLink from "./ButtonLink.astro";
       }
     }
   }
+  @media (max-width: 768px) {
+    .hero-right {
+      display: none;
+    }
+    .hero-left {
+      grid-column: full; /* fylder hele bredden */
+    }
+
+    .hero-content {
+      grid-column: content; /* holder din content-width */
+      padding-right: 0;
+    }
+  }
 </style>

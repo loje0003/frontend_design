@@ -126,4 +126,18 @@
       offset-anchor: 50% calc(50% - calc(var(--border-width) / 2));
     }
   }
+  @media (max-width: 768px) {
+    .grid_1-1 {
+      grid-template-columns: 1fr; /* stack */
+    }
+
+    .grid_1-1 > * + * {
+      margin-left: 0; /* fjern spacing */
+      margin-top: 2rem; /* tilføj lodret spacing */
+    }
+
+    .stat {
+      width: 100px; /* lidt mindre cirkler på mobil */
+    }
+  }
 </style>
