@@ -77,6 +77,9 @@ const { title, theme = "default" } = Astro.props;
       grid-column: full;
       padding-block: 4rem;
       background: var(--bg);
+      ButtonLink {
+        flex-shrink: 0;
+      }
     }
     .coreValues_section > * {
       grid-column: content;
@@ -111,6 +114,7 @@ const { title, theme = "default" } = Astro.props;
         font-family: var(--font-text);
         font-size: var(--p-size);
         color: var(--color-neutrals-700);
+        margin-bottom: 20px;
       }
 
       h2 {
@@ -140,5 +144,11 @@ const { title, theme = "default" } = Astro.props;
     --card-bg: var(--color-surface-secondary);
     --bg-button: #eaeaea;
     --color-button: #000;
+  }
+
+  @media (max-width 600px) {
+    section {
+      margin: 20px;
+    }
   }
 </style>
