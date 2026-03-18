@@ -6,6 +6,9 @@ import GroupImage from "@assets/images/group.webp";
 import CoreValuesCard from "@components/CoreValuesCard.astro";
 import OurTeam from "@components/OurTeam.astro";
 import faq from "@data/faq.json";
+import Employees from "../data/employees.json";
+
+const onlyTwo = Employees.slice(0, 2);
 ---
 
 <Layout>
@@ -49,7 +52,13 @@ import faq from "@data/faq.json";
 
   <CoreValuesCard title="Dark Section" theme="default" />
 
-  <OurTeam />
+  <OurTeam
+    subtitle="OUR TEAM"
+    title="We champion the bold"
+    description="Our success stems from the synergy between dedicated teams and our valued clients. We prioritize a company culture that fosters exceptional productivity, ensures customer satisfaction."
+    Employees={onlyTwo}
+  />
+  <br />
 
   <section class="accordion">
     <p class="eyebrow">faq</p>
