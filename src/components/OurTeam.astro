@@ -5,30 +5,113 @@ const { Employees, title, subtitle, description, ImageId1, ImageId2 } =
   Astro.props;
 ---
 
-<section>
+<section class="our_card">
   <div class="card_content">
-    <span class="eyebrow">{subtitle}</span>
-    <h2>{title}</h2>
+    <!-- VENSTRE -->
+    <div class="left">
+      <span class="eyebrow">{subtitle}</span>
+      <h2>{title}</h2>
+      <p>{description}</p>
 
-    <p>{description}</p>
-  </div>
+      <ButtonLink variant="black_link">Meet the Team</ButtonLink>
+    </div>
 
-  <div class="team">
-    {
-      Employees?.map((employee: any) => (
-        <article class="team_card">
-          <a href={`/singlepage/${employee.slug}`} class="team_card_link">
-            <div class="image_wrapper">
+    <!-- HØJRE -->
+    <div class="team">
+      {
+        Employees?.slice(0, 2).map((employee: any) => (
+          <article class="team_card">
+            <a href={`/singlepage/${employee.slug}`} class="team_card_link">
               <img src={employee.img} alt={employee.name} />
-              <span class="role">{employee.title}</span>
-            </div>
 
-            <h5>{employee.name}</h5>
-
-            <p>{employee.description}</p>
-          </a>
-        </article>
-      ))
-    }
+              <div class="info">
+                <h5>{employee.name}</h5>
+                <span class="role">{employee.title}</span>
+                <p>{employee.description}</p>
+              </div>
+            </a>
+          </article>
+        ))
+      }
+    </div>
   </div>
 </section>
+
+<style>
+  @layer components {
+    .our_card {
+      margin-top: var(--space-sections);
+      padding-bottom: var(--space-heading);
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: content;
+    }
+
+    .card_content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+    }
+
+    .team {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .team_card_link {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      align-items: center;
+    }
+
+    .team_card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.8rem;
+    }
+
+    h2 {
+      font-family: var(--font-header);
+      font-size: var(--h2-size);
+      font-weight: var(--weight-header-regular);
+    }
+
+    h5 {
+      font-family: var(--font-header);
+      font-size: var(--h5-size);
+      font-weight: var(--weight-header-regular);
+    }
+
+    p {
+      font-family: var(--text-header);
+      font-size: var(--p-size);
+      font-weight: var(--weight-text-regular);
+      color: var(--color-neutrals-700);
+    }
+  }
+</style>

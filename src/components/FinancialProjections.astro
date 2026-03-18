@@ -1,12 +1,17 @@
 ---
 import financialProjections from "@data/financialProjections.json";
 import DynamicIcon from "./helpers/DynamicIcon.astro";
+import ArrowLeft from "../icons/arrow-left.svg";
+import ArrowRight from "../icons/arrow--right.svg";
 ---
 
 <section class="financial-section">
   <p class="eyebrow">{financialProjections.eyebrow}</p>
   <h2>{financialProjections.title}</h2>
   <p>{financialProjections.subtitle}</p>
+
+  <ArrowLeft class="arrow_left" />
+  <ArrowRight class="arrow_right" />
 
   <ul class="cards_grid">
     {
@@ -31,11 +36,21 @@ import DynamicIcon from "./helpers/DynamicIcon.astro";
     p {
       font-family: var(--font-text);
       font-size: var(--p-size);
+      padding-top: 10px;
     }
 
     h2 {
-      font-family: var(--font-text);
+      font-family: var(--font-header);
       font-size: var(--h2-size);
+      font-weight: var(--weight-header-regular);
+      padding-top: 10px;
+    }
+
+    h3 {
+      font-family: var(--font-header);
+      font-weight: var(--weight-header-regular);
+      font-size: 20px;
+      padding-top: 10px;
     }
 
     .eyebrow {
@@ -55,11 +70,6 @@ import DynamicIcon from "./helpers/DynamicIcon.astro";
         grid-column: content;
       }
       > ul {
-        scroll-snap-type: x mandatory;
-        grid-column: content;
-        padding-inline: max(1rem, 50% - var(--content-width) / 2);
-        padding-block-end: 1rem;
-
         li {
           scroll-snap-align: center;
         }
@@ -71,23 +81,47 @@ import DynamicIcon from "./helpers/DynamicIcon.astro";
       margin: 0;
       padding: 0;
 
-      grid-column: full;
-      padding-inline: max(1rem, 50% - var(--content-width) / 2);
-
       display: grid;
       grid-auto-flow: column;
-      grid-auto-columns: 280px;
-      gap: 10px;
+      grid-auto-columns: 480px;
+      gap: 25px;
 
-      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      grid-column: full;
+      padding-inline: max(1rem, 50% - 1000px / 2);
+      padding-block-end: 1rem;
+      overflow-inline: auto;
+      scroll-padding-inline: max(1rem, 50% - 1000px / 2);
     }
-  }
 
-  .card {
-    background: #eaeaea;
-    border-radius: 20px;
-    padding: var(--border-radius-1);
-    align-self: start;
-    margin-top: 1rem;
+    .card {
+      background: #eaeaea;
+      border-radius: 20px;
+      padding: var(--border-radius-1);
+      align-self: start;
+      margin-top: 2rem;
+    }
+
+    .arrow_left {
+      background-color: var(--color-neutrals-900);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-surface-primary);
+    }
+
+    .arrow_right {
+      background-color: var(--color-neutrals-900);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-surface-primary);
+    }
   }
 </style>
